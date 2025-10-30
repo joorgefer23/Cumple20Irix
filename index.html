@@ -317,25 +317,39 @@
         .message-section {
             margin: 30px 0;
             padding: 20px;
+            max-width: 700px; /* Para que no se estire demasiado en pantallas grandes */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .text-flow {
-            font-size: 1.2em; /* Reducido ligeramente */
-            line-height: 2.0; /* Reducido ligeramente */
+            font-size: 1.2em;
+            line-height: 1.8; /* Ajustado para mejor legibilidad */
             color: #2d3436;
-            text-align: center; /* *** ESTE ES EL CAMBIO CLAVE *** */
+            text-align: center; /* Centramos todo el contenido */
+        }
+        
+        /* Flexbox para los párrafos con imágenes */
+        .text-flow p {
+            margin-bottom: 1.2em; /* Espaciado entre párrafos */
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+            justify-content: center; /* Centra los elementos dentro del párrafo */
+            align-items: center; /* Alinea verticalmente texto e imágenes */
+            gap: 5px; /* Espacio entre los elementos */
         }
 
-        .text-flow p {
-            margin-bottom: 1.5em;
+        .text-flow p strong {
+            display: inline; /* Asegura que el texto fuerte se mantenga en línea */
         }
+
 
         .inline-image {
             display: inline-block;
             max-width: 200px; /* Reducido para que quepa mejor */
             height: auto;
             vertical-align: middle;
-            margin: 0 5px;
+            margin: 0 5px; /* Espaciado alrededor de la imagen */
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
@@ -374,11 +388,45 @@
 
             .text-flow {
                 font-size: 1.1em;
-                line-height: 2;
+                line-height: 1.8;
             }
 
             .inline-image {
-                max-width: 160px; /* Reducido para móviles */
+                max-width: 150px; /* Más pequeño para tabletas */
+            }
+        }
+        
+        @media (max-width: 480px) { /* Móviles pequeños */
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+
+            .text-flow {
+                font-size: 0.9em; /* Texto aún más pequeño */
+                line-height: 1.6;
+            }
+            .text-flow p {
+                 margin-bottom: 1em;
+                 gap: 3px; /* Menos espacio entre elementos en móvil */
+            }
+            .text-flow p strong {
+                white-space: normal; /* Permite que el texto fuerte se rompa en líneas */
+            }
+
+            .inline-image {
+                max-width: 100px; /* ¡Aún más pequeño para móviles! */
+                margin: 0 2px; /* Menos margen */
+            }
+            
+            .footer h2 {
+                font-size: 1.5em;
+            }
+            .footer div {
+                font-size: 2.5em !important;
             }
         }
         /* ----- FIN: ESTILOS PARA LA PÁGINA 2 ----- */
