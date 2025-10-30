@@ -282,29 +282,34 @@
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 30px;
-            padding: 40px;
+            padding: 20px; /* Reducido para móviles */
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px; /* Reducido para móviles */
             background: linear-gradient(135deg, #ffeaa7, #ffcccc);
             border-radius: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 20px; /* Reducido */
             border: 3px solid #fff;
             animation: float 3s ease-in-out infinite;
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 2em; /* Reducido para móviles */
             color: #e84393;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Reducido */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
+        .hero p {
+            font-size: 1em; /* Reducido para móviles */
+            color: #d63031;
+        }
+
         .decorative-frame {
-            margin: 30px 0;
+            margin: 20px 0; /* Reducido */
             text-align: center;
         }
 
@@ -315,41 +320,28 @@
         }
 
         .message-section {
-            margin: 30px 0;
-            padding: 20px;
-            max-width: 700px; /* Para que no se estire demasiado en pantallas grandes */
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px 0; /* Reducido */
+            padding: 0; /* Reducido */
         }
 
         .text-flow {
-            font-size: 1.2em;
-            line-height: 1.8; /* Ajustado para mejor legibilidad */
+            font-size: 1.1em; /* Reducido */
+            line-height: 1.8; /* Ajustado */
             color: #2d3436;
-            text-align: center; /* Centramos todo el contenido */
+            text-align: center; /* *** CAMBIO CLAVE: CENTRADO *** */
         }
-        
-        /* Flexbox para los párrafos con imágenes */
+
         .text-flow p {
-            margin-bottom: 1.2em; /* Espaciado entre párrafos */
-            display: flex;
-            flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
-            justify-content: center; /* Centra los elementos dentro del párrafo */
-            align-items: center; /* Alinea verticalmente texto e imágenes */
-            gap: 5px; /* Espacio entre los elementos */
+            margin-bottom: 1.5em; /* Espacio entre párrafos */
+            /* ¡HEMOS QUITADO EL DISPLAY: FLEX QUE DABA PROBLEMAS! */
         }
-
-        .text-flow p strong {
-            display: inline; /* Asegura que el texto fuerte se mantenga en línea */
-        }
-
 
         .inline-image {
-            display: inline-block;
-            max-width: 200px; /* Reducido para que quepa mejor */
+            display: inline-block; /* Se alinea con el texto */
+            max-width: 180px; /* *** CAMBIO CLAVE: Tamaño reducido *** */
             height: auto;
             vertical-align: middle;
-            margin: 0 5px; /* Espaciado alrededor de la imagen */
+            margin: 5px; /* Espacio alrededor */
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
@@ -361,76 +353,41 @@
 
         .footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 30px;
+            margin-top: 30px; /* Reducido */
+            padding: 20px; /* Reducido */
             background: linear-gradient(135deg, #e84393, #fd79a8);
             border-radius: 20px;
             color: white;
         }
 
         .footer h2 {
-            font-size: 2em;
+            font-size: 1.8em; /* Reducido */
             margin-bottom: 10px;
+        }
+        
+        .footer div {
+            font-size: 2.5em; /* Reducido */
+            margin-top: 10px;
         }
 
         .floating {
             animation: float 3s ease-in-out infinite;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 20px;
-            }
-
-            .text-flow {
-                font-size: 1.1em;
-                line-height: 1.8;
-            }
-
-            .inline-image {
-                max-width: 150px; /* Más pequeño para tabletas */
-            }
-        }
-        
-        @media (max-width: 480px) { /* Móviles pequeños */
-            .hero h1 {
-                font-size: 1.8em;
-            }
-            
+        /* Responsive para MÓVILES MUY PEQUEÑOS (sobrescribe lo anterior) */
+        @media (max-width: 380px) {
             .container {
                 padding: 15px;
             }
-
             .text-flow {
-                font-size: 0.9em; /* Texto aún más pequeño */
-                line-height: 1.6;
+                font-size: 1em; /* Texto aún más pequeño */
             }
-            .text-flow p {
-                 margin-bottom: 1em;
-                 gap: 3px; /* Menos espacio entre elementos en móvil */
-            }
-            .text-flow p strong {
-                white-space: normal; /* Permite que el texto fuerte se rompa en líneas */
-            }
-
             .inline-image {
-                max-width: 100px; /* ¡Aún más pequeño para móviles! */
-                margin: 0 2px; /* Menos margen */
-            }
-            
-            .footer h2 {
-                font-size: 1.5em;
-            }
-            .footer div {
-                font-size: 2.5em !important;
+                max-width: 130px; /* Imágenes más pequeñas */
             }
         }
+        
         /* ----- FIN: ESTILOS PARA LA PÁGINA 2 ----- */
-
 
         /* Responsive para móviles (Ajustes de tamaño de PÁGINA 1) */
         @media (max-width: 480px) {
@@ -578,7 +535,7 @@
                 <p style="font-size: 1.2em; color: #d63031;">quiero decirte algo, pero esta vez de una manera más especial</p>
             </div>
 
-                    <div class="decorative-frame">
+            <div class="decorative-frame">
                 <img src="letra0.jpg" alt="Marco decorativo" loading="lazy">
             </div>
 
@@ -603,7 +560,7 @@
                         <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
                         <strong>y tampoco que</strong>
                         <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
-                    </p>
+    Â               </p>
 
                     <p>
                         <strong>Que sepas que siempre que suene</strong>
@@ -617,29 +574,29 @@
                         <strong>También debes saber que nunca me cansaré de decirte</strong>
                         <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
                         <strong>y que</strong>
-                                            <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
+                        <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
                     </p>
 
                     <p>
                         <strong>Aunque no separe un</strong>
-                                            <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
+                        <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
                         <strong>Cuando estás conmigo</strong>
-                                            <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
+                        <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
                         <strong>y cuando te vas siempre pienso en que</strong>
-                                            <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                        <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
                     </p>
 
                     <p>
                         <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
-                                            <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
+                        <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
                     </p>
 
                     <p>
                         <strong>Y como ya sabes, aunque todo esté mal</strong>
-                                            <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
+                        <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
                         <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
-                                            <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                    </p>
+                        <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+    Z             </p>
                 </div>
             </div>
 
