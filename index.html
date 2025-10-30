@@ -100,7 +100,7 @@
             
             aspect-ratio: 9 / 16;
             
-            display: flex; /* CAMBIO: cambiado de 'flex' a 'flex' */
+            display: flex; 
             flex-direction: column;
             justify-content: space-between;
             
@@ -291,17 +291,39 @@
             transform: scale(1);
         }
         
-        /* *** NUEVO CSS PARA LA PÁGINA 2 (SORPRESA) *** */
+        /* *** ESTILOS PARA LA PÁGINA 2 (SORPRESA) *** */
         #page-sorpresa {
             display: none; /* Oculta por defecto */
             width: 100%;
-            height: 100vh; /* Ocupa toda la pantalla */
-            justify-content: center;
-            align-items: center;
+            height: 100%; 
             font-family: 'Georgia', serif;
-            color: #555;
-            padding: 15px;
+            color: #333; /* Texto oscuro sobre fondo claro */
+            padding: 20px;
             text-align: center;
+            
+            overflow-y: auto; /* Permite scroll si el mensaje es largo */
+            justify-content: flex-start; /* Empieza el contenido desde arriba */
+            align-items: center;
+        }
+
+        .sorpresa-contenido {
+            width: 100%;
+            max-width: 500px; /* Ancho máximo del contenido */
+            margin-top: 50px; /* Un poco de espacio arriba */
+            margin-bottom: 50px;
+        }
+
+        .sorpresa-contenido p {
+            font-size: 1.3rem; /* Tamaño de letra legible */
+            line-height: 1.7;
+            margin: 20px 0; /* Espacio entre párrafos e imágenes */
+        }
+        
+        .sorpresa-contenido img {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            border-radius: 15px; /* Bordes redondeados (como Spotify) */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 10px 0; /* Espacio entre imágenes */
         }
         /* *** FIN NUEVO CSS *** */
 
@@ -444,7 +466,76 @@
     </div>
 
     <div id="page-sorpresa">
+        
+        <div class="sorpresa-contenido">
+            
+            <p>Antes de darte tu regalo quiero decirte algo, pero esta vez de una manera mas especial</p>
+            
+            <p>Ha pasado ya más de un año de cuando</p>
+            
+            <img src="letra1.png" alt="Nos conocimo' en el teteo Cuando estaba llena la luna">
+            
+            <p>Desde entonces</p>
+            
+            <img src="letra2.png" alt="Le doy gracias al cielo que pude encontrarte">
+            
+            <p>Pasó un timepo y me di cuenta que</p>
+            
+            <img src="letra3.png" alt="Colegas">
+            <img src="letra4.png" alt="Constelación">
+            
+            <p>Y</p>
+            
+            <img src="letra5.png" alt="Gracias, Dios, por darme más">
+            <img src="letra6.png" alt="Eres lo más puro que yo he presenciado">
+
+            <p>e hiciste que</p>
+            
+            <img src="letra7.png" alt="Mis grises han pillado tu color">
+            
+            <p>y tampoco que y te volvieste en mi</p>
+            
+            <img src="letra8.png" alt="Y no entienden que siempre has sido diferente Como Venecia sin agua, como Madrid sin gente">
+            <img src="letra9.png" alt="Mi curita para el dolor">
+
+            <p>Que sepsas que siempre que suene</p>
+            
+            <img src="letra10.png" alt="La cone que tenemo' nadie más la tiene">
+            
+            <p>bailare contigo dándote una vueltita, al igual que cuadno suene</p>
+            
+            <img src="letra11.png" alt="Que alguien saque a bailar a la morocha Que se muere de ganas">
+            
+            <p>siempre la cantare a tope contigo.</p>
+            
+            <p>También debes saber que nunca me cansaré de decite</p>
+
+            <img src="letra12.png" alt="Bebé, perdona la hora Es que el dolor no mejora...">
+            <img src="letra13.png" alt="DUELE UN MONTON DESPEDIRMEDETI">
+            <img src="letra14.png" alt="Ese brillo que hay en tus ojos marrones...">
+
+            <p>y que</p>
+            
+            <img src="letra15.png" alt="Una varita diseñó su cuerpo...">
+            <img src="letra16.png" alt="Aunque no separe un Vuelo, un huso horario...">
+            
+            <p>y cuando te vas siempre pienso en que</p>
+            
+            <img src="letra17.png" alt="Debi tirar más fotos de cuando te tuve...">
+            
+            <p>Por ultimo, nunca podre agradecerte lo suficiente por hacer que</p>
+            
+            <img src="letra18.png" alt="Contigo, me permito abrirme Y mostrarme vulnerable...">
+
+            <p>Y como ya sabes, aunque todo esté mal</p>
+            
+            <img src="letra19.png" alt="Si no te da para comprarte un tejado...">
+            <img src="letra20.png" alt="Y voy, dando saltos como en la gamebol">
+            
+            <p>Felicidades, te quiero muchisisimo</p>
+
         </div>
+    </div>
 
 
     <audio id="birthday-song" src="https://audio.jukehost.co.uk/5g7U2RGjRiRKsYVtHsxZHowKYH9BHtMD" loop preload="metadata" playsinline></audio> 
