@@ -3,22 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Sorpresa!</title>
+    <title>Sorpresa Especial</title>
     <style>
-        /* Un fondo simple para que no sea un blanco cegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background-color: #f0f0f0;
-            height: 100vh;
-            width: 100vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        #page-sorpresa {
+            width: 100%;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #ffeaa7, #ffcccc);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid #fff;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 1.8em;
+            color: #e84393;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1em;
+            color: #d63031;
+            line-height: 1.4;
+        }
+
+        .decorative-frame {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .decorative-frame img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .message-section {
+            margin: 25px 0;
+            padding: 15px;
+        }
+
+        .text-flow {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #2d3436;
+            text-align: left;
+        }
+
+        .text-flow p {
+            margin-bottom: 1.2em;
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             align-items: center;
-            color: #555;
+            gap: 5px;
+        }
+
+        .text-flow strong {
+            display: inline;
+        }
+
+        .inline-image {
+            display: inline-block;
+            max-width: 120px;
+            height: auto;
+            vertical-align: middle;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .inline-image:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #e84393, #fd79a8);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .footer h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .footer div {
+            font-size: 2.5em;
+            margin-top: 15px;
+        }
+
+        /* Tablets */
+        @media (min-width: 600px) {
+            .container {
+                padding: 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .text-flow {
+                font-size: 1.15em;
+            }
+
+            .inline-image {
+                max-width: 150px;
+            }
+
+            .footer h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 900px) {
+            .container {
+                padding: 40px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .text-flow {
+                font-size: 1.25em;
+                line-height: 2;
+            }
+
+            .inline-image {
+                max-width: 180px;
+            }
+
+            .footer h2 {
+                font-size: 2em;
+            }
+
+            .footer div {
+                font-size: 3em;
+            }
         }
     </style>
 </head>
 <body>
-    
-    </body>
+    <div id="page-sorpresa">
+        <div class="container">
+            <div class="hero floating">
+                <h1>🌻 Antes de darte tu regalo 🍦</h1>
+                <p>quiero decirte algo, pero esta vez de una manera más especial</p>
+            </div>
+
+            <div class="decorative-frame">
+                <img src="letra0.jpg" alt="Marco decorativo" loading="lazy">
+            </div>
+
+            <div class="message-section">
+                <div class="text-flow">
+                    <p>
+                        <strong>Ha pasado ya más de un año de cuando</strong>
+                        <img src="letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Desde entonces</strong>
+                        <img src="letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
+                        <strong>y te volviste en mi</strong>
+                        <img src="letra5.jpg" class="inline-image" alt="FULL TIME" loading="lazy">
+                        <strong>e hiciste que</strong>
+                        <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Hay personas que</strong>
+                        <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        <strong>y tampoco que</strong>
+                        <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Que sepas que siempre que suene</strong>
+                        <img src="letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
+                        <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
+                        <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
+                        <strong>siempre la cantaré a tope contigo.</strong>
+                    </p>
+
+                    <p>
+                        <strong>También debes saber que nunca me cansaré de decirte</strong>
+                        <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
+                        <strong>y que</strong>
+                        <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Aunque no separe un</strong>
+                        <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
+                        <strong>Cuando estás conmigo</strong>
+                        <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
+                        <strong>y cuando te vas siempre pienso en que</strong>
+                        <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
+                        <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
+                    </p>
+
+                    <p>
+                        <strong>Y como ya sabes, aunque todo esté mal</strong>
+                        <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
+                        <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
+                        <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h2>Felicidades, te quiero muchísimo</h2>
+                <div>🫶🏼❤️</div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
