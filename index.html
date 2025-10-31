@@ -143,8 +143,9 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-15px) scale(1.05); } 
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         .message {
@@ -265,138 +266,124 @@
         /* ----- FIN ESTILOS PÁGINA 1 ----- */
 
 
-        /* ----- INICIO: ESTILOS PARA LA PÁGINA 2 (TU CÓDIGO CORREGIDO) ----- */
+        /* ----- INICIO: ESTILOS PARA LA PÁGINA 2 (TRADUCIDOS DE REACT) ----- */
         
         #page-sorpresa {
             display: none; /* Oculta por defecto */
             width: 100%;
             height: 100%; 
-            padding: 20px;
+            padding: 2rem 1rem;
             overflow-y: auto; /* Permite scroll si el mensaje es largo */
             justify-content: flex-start; /* Empieza el contenido desde arriba */
             align-items: center;
+            font-family: sans-serif; /* <-- Como en tu código React */
         }
         
         .container {
-            max-width: 900px;
-            width: 95%; /* *** CAMBIO: Se adapta al móvil *** */
-            margin: 20px auto; /* Margen automático */
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 20px; /* Reducido para móviles */
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 42rem; /* 672px */
+            margin: 0 auto;
         }
 
         .hero {
             text-align: center;
-            padding: 20px; /* Reducido */
-            background: linear-gradient(135deg, #ffeaa7, #ffcccc);
-            border-radius: 20px;
-            margin-bottom: 20px; /* Reducido */
-            border: 3px solid #fff;
-            animation: float 3s ease-in-out infinite;
+            margin-bottom: 3rem; /* 48px */
+            animation: bounce 2s infinite;
         }
 
         .hero h1 {
-            font-size: 2em; /* Reducido */
-            color: #e84393;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 2rem; /* 32px */
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem; /* 16px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; /* 8px */
         }
 
         .hero p {
-            font-size: 1.1em;
-            color: #d63031;
+            font-size: 1.125rem; /* 18px */
+            font-weight: 600;
+            color: #dc2626;
         }
 
         .decorative-frame {
-            margin: 20px 0;
-            text-align: center;
+            margin-bottom: 3rem; /* 48px */
         }
 
         .decorative-frame img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            height: 16rem; /* 256px */
+            object-fit: cover;
+            border-radius: 1rem; /* 16px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .message-section {
-            margin: 20px 0;
-            padding: 0 10px; /* Espacio lateral */
+            margin-bottom: 3rem; /* 48px */
         }
 
-        .text-flow {
-            font-size: 1.2em;
-            line-height: 2;
-            color: #2d3436;
-            text-align: center; /* *** CAMBIO: Centrado *** */
+        .message-section div {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem; /* 16px */
+            padding: 1.5rem; /* 24px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .text-flow p {
-            margin-bottom: 1.5em; /* Espacio entre párrafos */
-            /* Se ha quitado display: flex */
+        .message-section p {
+            font-size: 1rem; /* 16px */
+            line-height: 1.5; /* 24px */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem; /* 8px */
+            margin-bottom: 1rem; /* 16px */
+        }
+
+        .message-section strong {
+            flex-shrink: 0;
+            font-weight: bold;
         }
 
         .inline-image {
-            display: inline-block;
-            max-width: 180px; /* *** CAMBIO: Tamaño base más pequeño *** */
-            height: auto;
+            width: 4rem; /* 64px */
+            height: 1.5rem; /* 24px */
+            flex-shrink: 0;
+            object-fit: contain;
             vertical-align: middle;
-            margin: 5px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
         }
-
-        .inline-image:hover {
-            transform: scale(1.05);
+        
+        .message-section span { /* Para la palabra "LOS" */
+            font-size: 0.875rem; /* 14px */
+            font-weight: bold;
+            color: #374151;
         }
 
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, #e84393, #fd79a8);
-            border-radius: 20px;
-            color: white;
         }
 
         .footer h2 {
-            font-size: 1.8em; /* Reducido */
-            margin-bottom: 10px;
+            font-size: 1.5rem; /* 24px */
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem; /* 16px */
         }
-        
+
         .footer div {
-            font-size: 2.5em;
-            margin-top: 10px;
+            font-size: 2.5rem; /* 40px */
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Responsive para MÓVILES */
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-                width: 98%; /* Ocupa casi todo */
-            }
-            .hero {
-                padding: 15px;
-            }
-            .hero h1 {
-                font-size: 1.8em;
-            }
-             .hero p {
-                font-size: 1em;
-            }
-            .text-flow {
-                font-size: 1.1em; /* Tamaño de letra para móvil */
-                line-height: 1.8;
-            }
-            .inline-image {
-                max-width: 150px; /* Imágenes más pequeñas en móvil */
-            }
+        /* Responsive para pantallas más grandes (traducción de "sm:") */
+        @media (min-width: 640px) {
+            .hero h1 { font-size: 2.25rem; } /* 36px */
+            .hero p { font-size: 1.25rem; } /* 20px */
+            .decorative-frame img { height: 20rem; } /* 320px */
+            .message-section p { font-size: 1.125rem; } /* 18px */
+            .inline-image { width: 6rem; height: 2.25rem; } /* 96px, 36px */
+            .footer h2 { font-size: 1.875rem; } /* 30px */
+            .footer div { font-size: 3rem; } /* 48px */
         }
         
         /* ----- FIN: ESTILOS PARA LA PÁGINA 2 ----- */
@@ -543,82 +530,82 @@
     <div id="page-sorpresa">
         
         <div class="container">
-            <div class="hero floating">
-        _       <h1>🌻 Antes de darte tu regalo 🍦</h1>
-                <p style="font-size: 1.2em; color: #d63031;">quiero decirte algo, pero esta vez de una manera más especial</p>
-            </div>
-
-            <div class="decorative-frame">
-                <img src="letra0.jpg" alt="Marco decorativo" loading="lazy">
-            </div>
-
-            <div class="message-section">
-                <div class="text-flow">
-                    <p>
-                        <strong>Ha pasado ya más de un año de cuando</strong>
-                        <img src="letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
-                    </p>
-
-                    <p>
-                        <strong>Desde entonces</strong>
-                        <img src="letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
-                        <strong>y te volviste en mi</strong>
-                        <img src="letra5.jpg" class="inline-image" alt="FULL TIME" loading="lazy">
-                        <strong>e hiciste que</strong>
-                        <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                    </p>
-
-                    <p>
-                        <strong>Hay personas que</strong>
-                        <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                        <strong>y tampoco que</strong>
-                        <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
-                    </p>
-
-                    <p>
-                        <strong>Que sepas que siempre que suene</strong>
-                        <img src="letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
-                        <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
-                        <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
-                        <strong>siempre la cantaré a tope contigo.</strong>
-                    </p>
-
-                    <p>
-                        <strong>También debes saber que nunca me cansaré de decirte</strong>
-                        <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
-                        <strong>y que</strong>
-                        <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
-                    </p>
-
-                    <p>
-                        <strong>Aunque no separe un</strong>
-                        <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
-                        <strong>Cuando estás conmigo</strong>
-                        <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
-                        <strong>y cuando te vas siempre pienso en que</strong>
-                        <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
-                    </p>
-
-                  _ <p>
-                        <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
-                        <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
-                    </p>
-
-                    <p>
-                        <strong>Y como ya sabes, aunque todo esté mal</strong>
-                        <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
-                        <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
-                        <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
-    LOS           </p>
-                </div>
-            </div>
-
-            <div class="footer">
-                <h2>Felicidades, te quiero muchísimo</h2>
-    TE           <div style="font-size: 3em; margin-top: 20px;">🫶🏼❤️</div>
-            </div>
-        </div>
-
+            <div class="hero">
+                <h1>🌻 Antes de darte tu regalo 🍦</h1>
+                <p>Quiero decirte algo, pero esta vez de una manera más especial.</p>
+            </div>
+    
+            <div class="decorative-frame">
+                <img src="letra0.jpg" alt="Marco decorativo" loading="lazy">
+            </div>
+    
+            <div class="message-section">
+                <div>
+                    <p>
+                        <strong>Ha pasado ya más de un año de cuando</strong>
+                        <img src="letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Desde entonces</strong>
+                        <img src="letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
+                        <strong>y te volviste en mi</strong>
+                        <img src="letra5.jpg" class="inline-image" alt="FULL TIME" loading="lazy">
+                        <strong>e hiciste que</strong>
+                        <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Hay personas que</strong>
+                        <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        <strong>y tampoco que</strong>
+                        <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Que sepas que siempre que suene</strong>
+                        <img src="letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
+                        <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
+                        <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
+                        <strong>siempre la cantaré a tope contigo.</strong>
+                    </p>
+    
+                    <p>
+                        <strong>También debes saber que nunca me cansaré de decirte</strong>
+                        <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
+                        <strong>y que</strong>
+                        <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Aunque no separe un</strong>
+                        <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
+                        <strong>Cuando estás conmigo</strong>
+                        <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
+                        <strong>y cuando te vas siempre pienso en que</strong>
+                        <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
+                        <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
+                    </p>
+    
+                    <p>
+                        <strong>Y como ya sabes, aunque todo esté mal</strong>
+                        <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
+                        <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
+                        <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        <span>LOS</span>
+                    </p>
+                </div>
+            </div>
+    
+            <div class="footer">
+                <h2>Felicidades, te quiero muchísimo</h2>
+                <div>🫶🏼❤️</div>
+            </div>
+        </div>
     </div>
 
 
@@ -658,7 +645,7 @@
                 backgroundDecor.style.display = 'none';
                 
                 // 4. CAMBIO: Cambiar el fondo del BODY a tu nuevo gradiente
-                document.body.style.background = 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #74b9ff 100%)';
+                document.body.style.background = 'linear-gradient(to bottom right, #fdf2f8, #fef3c7, #fed7aa)';
                 
                 // 5. Mostrar la página 2 (sorpresa)
                 pageSorpresa.style.display = 'flex'; // Usamos flex para centrar
@@ -782,4 +769,3 @@
         });
     </script>
 </body>
-</html>
