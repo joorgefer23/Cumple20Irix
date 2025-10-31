@@ -27,10 +27,31 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 20px;
             padding: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .container > * {
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes float {
@@ -60,17 +81,6 @@
             font-size: 1em;
             color: #d63031;
             line-height: 1.4;
-        }
-
-        .decorative-frame {
-            margin: 25px 0;
-            text-align: center;
-        }
-
-        .decorative-frame img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .message-section {
@@ -226,6 +236,7 @@
                         <img src="letra5.jpg" class="inline-image" alt="Full time" loading="lazy">
                         <strong>e hiciste que</strong>
                         <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -241,6 +252,7 @@
                         <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
                         <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
                         <strong>siempre la cantaré a tope contigo.</strong>
+                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -250,6 +262,7 @@
                         <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN FAV" loading="lazy">
                         <strong>. De verdad que</strong>
                         <img src="letra18.jpg" class="inline-image" alt="CHINA pt1" loading="lazy">
+                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -259,6 +272,7 @@
                         <img src="letra14.jpg" class="inline-image" alt="GAMEBOI" loading="lazy">
                         <strong>y cuando te vas siempre pienso en que</strong>
                         <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -269,6 +283,7 @@
                     <p>
                         <strong>Y como ya sabes, aunque todo esté mal</strong>
                         <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        <strong>.</strong>
                     </p>
                 </div>
             </div>
