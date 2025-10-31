@@ -17,6 +17,27 @@
             font-family: 'Georgia', serif;
         }
 
+        /* ----- DEFINICIONES DE ANIMACIONES (GLOBALES) ----- */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.85) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); } 
+        }
+
         /* ----- INICIO ESTILOS PÁGINA 1 (CUMPLEAÑOS) ----- */
         body {
             background: linear-gradient(135deg, #FFF9E6 0%, #E8F5E9 50%, #E1F5FE 100%);
@@ -57,11 +78,6 @@
         .sunflower:nth-child(9) { top: 50%; left: 5%; animation-duration: 29s; }
         .sunflower:nth-child(10) { bottom: 15%; left: 18%; animation-duration: 20s; }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         /* Helados - Helados a la derecha */
         .ice-cream {
             position: absolute;
@@ -79,10 +95,6 @@
         .ice-cream:nth-child(19) { top: 40%; right: 2%; animation-delay: 1.4s; }
         .ice-cream:nth-child(20) { bottom: 18%; right: 18%; animation-delay: 0.6s; }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
 
         /* Tarjeta principal (Página 1) */
         .card {
@@ -120,13 +132,8 @@
             background-color: rgba(0, 0, 0, 0.65);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.85) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        /* Estilos de texto (legibles) */
-        h1 {
+        /* h1 de la Página 1 */
+        .card h1 {
             color: #FFFFFF;
             font-size: 2.2rem;
             font-weight: 700;
@@ -140,11 +147,6 @@
             margin: 15px 0;
             animation: bounce 2s infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-15px) scale(1.05); } 
         }
 
         .message {
@@ -265,141 +267,209 @@
         /* ----- FIN ESTILOS PÁGINA 1 ----- */
 
 
-        /* ----- INICIO: ESTILOS PARA LA PÁGINA 2 (TU CÓDIGO CORREGIDO) ----- */
+        /* ----- INICIO: ESTILOS PARA LA PÁGINA 2 (TU CÓDIGO) ----- */
         
         #page-sorpresa {
             display: none; /* Oculta por defecto */
             width: 100%;
             height: 100%; 
-            padding: 15px; /* Reducido para móviles */
+            padding: 20px;
             overflow-y: auto; /* Permite scroll */
             justify-content: flex-start; /* Empieza el contenido desde arriba */
             align-items: center;
+            font-family: sans-serif; /* Tu nueva fuente */
         }
         
         .container {
-            max-width: 600px; /* Reducido para que no se vea con "zoom" */
-            width: 95%; /* Se adapta al móvil */
-            margin: 20px auto; /* Centrado y con espacio vertical */
+            max-width: 900px;
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 20px; /* Reducido para móviles */
+            border-radius: 20px;
+            padding: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .hero {
             text-align: center;
-            padding: 20px;
+            padding: 30px 15px;
             background: linear-gradient(135deg, #ffeaa7, #ffcccc);
-            border-radius: 20px;
-            margin-bottom: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
             border: 3px solid #fff;
             animation: float 3s ease-in-out infinite;
         }
 
+        /* h1 de la Página 2 */
         .hero h1 {
-            font-size: 2em; /* Reducido */
+            font-size: 1.8em;
             color: #e84393;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.3;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
-        
-        /* CSS para el <p> dentro de .hero */
+
         .hero p {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #d63031;
+            line-height: 1.4;
+            font-weight: 600; /* Añadido de tu código */
         }
 
         .decorative-frame {
-            margin: 20px 0;
+            margin: 25px 0;
             text-align: center;
         }
 
         .decorative-frame img {
             max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 1rem; /* 16px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            height: 16rem; /* 256px */
+            object-fit: cover;
         }
 
         .message-section {
-            margin: 20px 0;
-            padding: 0 10px; /* Espacio lateral */
+            margin: 25px 0;
+            margin-bottom: 3rem; /* 48px */
+        }
+        
+        /* Contenedor del texto (caja blanca) */
+        .message-section div {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .text-flow {
-            font-size: 1.2em;
+            font-size: 1em;
             line-height: 1.8;
             color: #2d3436;
-            text-align: center; /* *** CAMBIO CLAVE: CENTRADO *** */
+            text-align: left;
         }
 
         .text-flow p {
-            margin-bottom: 1.5em; /* Espacio entre párrafos */
-            /* Se ha quitado display: flex */
+            margin-bottom: 1.2em;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+            font-size: 1rem; /* 16px */
+            line-height: 1.5;
+        }
+
+        .text-flow strong {
+            display: inline;
+            flex-shrink: 0;
+            font-weight: bold;
         }
 
         .inline-image {
             display: inline-block;
-            max-width: 200px; /* *** CAMBIO CLAVE: Tamaño base *** */
+            max-width: 120px;
             height: auto;
             vertical-align: middle;
-            margin: 5px;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            /* Tamaños de tu código React */
+            width: 4rem; 
+            height: 1.5rem;
+            object-fit: contain;
         }
 
         .inline-image:hover {
             transform: scale(1.05);
         }
 
+        .message-section span {
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: #374151;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 40px;
+            padding: 25px;
             background: linear-gradient(135deg, #e84393, #fd79a8);
-            border-radius: 20px;
+            border-radius: 15px;
             color: white;
         }
 
         .footer h2 {
-            font-size: 1.8em; /* Reducido */
+            font-size: 1.5em;
             margin-bottom: 10px;
+            line-height: 1.3;
+            font-weight: bold;
         }
         
         .footer div {
             font-size: 2.5em;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Responsive para MÓVILES */
-        @media (max-width: 480px) {
+        /* Media queries de tu código (fusionadas) */
+        @media (min-width: 640px) { /* Tablets */
             .container {
-                padding: 15px;
-                width: 98%; /* Ocupa casi todo */
+                padding: 35px;
             }
-            .hero {
-                padding: 15px;
-            }
+
             .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .text-flow {
+                font-size: 1.15em;
+            }
+            .message-section p { font-size: 1.125rem; }
+
+            .inline-image {
+                max-width: 150px;
+                /* Tamaños de tu código React */
+                width: 6rem; 
+                height: 2.25rem;
+            }
+
+            .footer h2 {
                 font-size: 1.8em;
             }
-             .hero p {
-                font-size: 1em;
+            .footer div { font-size: 3rem; }
+        }
+
+        @media (min-width: 900px) { /* Desktop */
+            .container {
+                padding: 40px;
             }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
             .text-flow {
-                font-size: 1.1em; /* Tamaño de letra para móvil */
-                line-height: 1.8;
-            }
-            .inline-image {
-                max-width: 150px; /* Imágenes más pequeñas en móvil */
+                font-size: 1.25em;
+                line-height: 2;
             }
         }
-        
         /* ----- FIN: ESTILOS PARA LA PÁGINA 2 ----- */
 
 
@@ -546,7 +616,7 @@
         <div class="container">
             <div class="hero floating">
                 <h1>🌻 Antes de darte tu regalo 🍦</h1>
-                <p style="font-size: 1.2em; color: #d63031;">quiero decirte algo, pero esta vez de una manera más especial</p>
+                <p>Quiero decirte algo, pero esta vez de una manera más especial.</p>
             </div>
 
             <div class="decorative-frame">
@@ -554,69 +624,72 @@
             </div>
 
             <div class="message-section">
-                <div class="text-flow">
-                    <p>
-                        <strong>Ha pasado ya más de un año de cuando</strong>
-                        <img src="letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
-                    </p>
+                <div>
+                    <div class="text-flow">
+                        <p>
+                            <strong>Ha pasado ya más de un año de cuando</strong>
+                            <img src="letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
+                        </p>
 
-                    <p>
-                        <strong>Desde entonces</strong>
-                        <img src="letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
-                        <strong>y te volviste en mi</strong>
-                        <img src="letra5.jpg" class="inline-image" alt="FULL TIME" loading="lazy">
-                        <strong>e hiciste que</strong>
-                        <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
-    Â             </p>
+                        <p>
+                            <strong>Desde entonces</strong>
+                            <img src="letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
+                            <strong>y te volviste en mi</strong>
+                            <img src="letra5.jpg" class="inline-image" alt="FULL TIME" loading="lazy">
+                            <strong>e hiciste que</strong>
+                            <img src="letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                        </p>
 
-                    <p>
-                        <strong>Hay personas que</strong>
-                        <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                        <strong>y tampoco que</strong>
-                        <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
-                    </p>
+                        <p>
+                            <strong>Hay personas que</strong>
+                            <img src="letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                            <strong>y tampoco que</strong>
+                            <img src="letra7.jpg" class="inline-image" alt="Tiroteo Remix" loading="lazy">
+                        </p>
 
-                    <p>
-                        <strong>Que sepas que siempre que suene</strong>
-                        <img src="letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
-                        <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
-                        <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
-                        <strong>siempre la cantaré a tope contigo.</strong>
-                    </p>
+                        <p>
+                            <strong>Que sepas que siempre que suene</strong>
+                            <img src="letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
+                            <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
+                            <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
+                            <strong>siempre la cantaré a tope contigo.</strong>
+                        </p>
 
-                    <p>
-                        <strong>También debes saber que nunca me cansaré de decirte</strong>
-                        <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
-    Añadido               <strong>y que</strong>
-                        <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
-                    </p>
+                        <p>
+                            <strong>También debes saber que nunca me cansaré de decirte</strong>
+                            <img src="letra3.jpg" class="inline-image" alt="Constelación" loading="lazy">
+                            <strong>y que</strong>
+                            <img src="letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
+                        </p>
 
-                    <p>
-                        <strong>Aunque no separe un</strong>
-                        <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
-    ar             <strong>Cuando estás conmigo</strong>
-                        <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
-    s               <strong>y cuando te vas siempre pienso en que</strong>
-                        <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
-                    </p>
+                        <p>
+                            <strong>Aunque no separe un</strong>
+                            <img src="letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
+                            <strong>Cuando estás conmigo</strong>
+                            <img src="letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
+                            <strong>y cuando te vas siempre pienso en que</strong>
+                            <img src="letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                        </p>
 
-                s   <p>
-                        <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
-                        <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
-                    </p>
+                        <p>
+                            <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
+        a                 <img src="letra14.jpg" class="inline-image" alt="Gameboi" loading="lazy">
+                        </p>
 
-                    <p>
-                        <strong>Y como ya sabes, aunque todo esté mal</strong>
-    Â               <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
-                        <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
-                        <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                    </p>
+                        <p>
+                            <strong>Y como ya sabes, aunque todo esté mal</strong>
+        a               <img src="letra12.jpg" class="inline-image" alt="TU VAS SIN" loading="lazy">
+                            <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
+                            <img src="letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                            <span>LOS</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div class="footer">
                 <h2>Felicidades, te quiero muchísimo</h2>
-    TE           <div style="font-size: 3em; margin-top: 20px;">🫶🏼❤️</div>
+    d           <div>🫶🏼❤️</div>
             </div>
         </div>
 
@@ -659,7 +732,7 @@
                 backgroundDecor.style.display = 'none';
                 
                 // 4. CAMBIO: Cambiar el fondo del BODY a tu nuevo gradiente
-                document.body.style.background = 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #74b9ff 100%)';
+                document.body.style.background = 'linear-gradient(to bottom right, #fdf2f8, #fef3c7, #fed7aa)';
                 
                 // 5. Mostrar la página 2 (sorpresa)
                 pageSorpresa.style.display = 'flex'; // Usamos flex para centrar
@@ -747,7 +820,7 @@
 
             const updateProgressStyle = () => {
                  if (audio.duration) {
-                     const progressPercent = (audio.currentTime / audio.duration) * 100;
+                     const progressPercent = (progressBar.value / audio.duration) * 100;
                      progressBar.style.setProperty('--progress-percent', `${progressPercent}%`);
                  }
             };
@@ -782,3 +855,5 @@
 
         });
     </script>
+</body>
+</html>
