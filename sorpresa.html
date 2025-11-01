@@ -139,6 +139,34 @@
             font-weight: 500;
         }
 
+        .thanks-list {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .thanks-list li {
+            margin-bottom: 1.5em;
+            padding-left: 30px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .thanks-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+            color: #e84393;
+        }
+
+        .thanks-list li strong {
+            display: inline;
+        }
+
         /* Tablets */
         @media (min-width: 600px) {
             .container {
@@ -163,6 +191,10 @@
 
             .footer h2 {
                 font-size: 1.4em;
+            }
+
+            .thanks-list {
+                font-size: 1.15em;
             }
         }
 
@@ -195,6 +227,11 @@
 
             .footer h2 {
                 font-size: 1.5em;
+            }
+
+            .thanks-list {
+                font-size: 1.25em;
+                line-height: 2;
             }
         }
     </style>
@@ -237,6 +274,7 @@
                         <img src="letra7.jpg" class="inline-image" alt="Tiroteo remix" loading="lazy">
                         <strong>y tampoco que</strong>
                         <img src="letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
+                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -245,7 +283,6 @@
                         <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
                         <img src="letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
                         <strong>siempre la cantaré a tope contigo.</strong>
-                        <strong>.</strong>
                     </p>
 
                     <p>
@@ -285,34 +322,34 @@
                 <h2>Quiero darte las gracias por</h2>
             </div>
 
-                <div class="message-section">
-                <div class="text-flow">
-                    <p>
+            <div class="message-section">
+                <ul class="thanks-list">
+                    <li>
                         <strong>Gracias por haber confiado en mí desde el primer momento con tu</strong>
                         <img src="chat15.jpg" class="inline-image" alt="chat15" loading="lazy">
                         <strong>.</strong>
-                    </p>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por los detallas tan bonitos que tienes conmigo</strong>
                         <img src="chat2.jpg" class="inline-image" alt="chat2" loading="lazy">
                         <img src="chat3.jpg" class="inline-image" alt="chat3" loading="lazy">
                         <strong>,</strong>
                         <img src="chat10.jpg" class="inline-image" alt="chat10" loading="lazy">
-                        <strong>,</strong>
-                    </p>
+                        <strong>.</strong>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por contarme todo lo que te hace ilusión, como</strong>
                         <img src="chat21.jpg" class="inline-image" alt="chat21" loading="lazy">
                         <strong>, como cuando me ensañas que ropa te compras</strong>
                         <img src="chat17.jpg" class="inline-image" alt="chat17" loading="lazy">
                         <img src="chat16.jpg" class="inline-image" alt="chat16" loading="lazy">
                         <img src="chat4.jpg" class="inline-image" alt="chat15" loading="lazy">
-                        <strong>,</strong>
-                    </p>
+                        <strong>.</strong>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por hacer que sea tu consejero de confianza, cuando</strong>
                         <img src="chat18.jpg" class="inline-image" alt="chat18" loading="lazy">
                         <strong>o cuando </strong>
@@ -320,30 +357,30 @@
                         <strong>y muchas veces</strong>
                         <img src="chat8.jpg" class="inline-image" alt="chat8" loading="lazy">
                         <strong>, no sabes la ilusion que me hace que cuentes conmigo para estas cosas.</strong>
-                    </p>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por simpre haber hecho que me sienta seguro hablando de mis problemas contigo</strong>
                         <img src="chat11.jpg" class="inline-image" alt="chat11" loading="lazy"> 
                         <img src="chat22.jpg" class="inline-image" alt="chat22" loading="lazy">
                         <strong>.</strong>
-                    </p>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por preocuparte por mí</strong>
                         <img src="chat23.jpg" class="inline-image" alt="chat23" loading="lazy">
                         <img src="chat24.jpg" class="inline-image" alt="chat24" loading="lazy">
                         <strong>.</strong>
-                    </p>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por echarme de menos</strong>
                         <img src="chat19.jpg" class="inline-image" alt="chat19" loading="lazy">
                         <img src="chat12.jpg" class="inline-image" alt="chat12" loading="lazy">
                         <strong>.</strong>
-                    </p>
+                    </li>
 
-                    <p>
+                    <li>
                         <strong>Gracias por quererme</strong>
                         <img src="chat5.jpg" class="inline-image" alt="chat5" loading="lazy">
                         <img src="chat14.jpg" class="inline-image" alt="chat14" loading="lazy">
@@ -351,13 +388,13 @@
                         <img src="chat7.jpg" class="inline-image" alt="chat7" loading="lazy">
                         <img src="chat1.jpg" class="inline-image" alt="chat1" loading="lazy">
                         <strong>.</strong>
-                    </p>
+                    </li>
 
-                    <p>
-                        <strong>Grcias por contarme tu día a día, tus alegrías, tus problemas... </strong>
-                        <strong>En definitiva muchisisimas gracias por ser tú al 100%, sin filtros, conmigo.</strong>
-                    </p>
-
+                    <li>
+                        <strong>Gracias por contarme tu día a día, tus alegrías, tus problemas... En definitiva muchisisimas gracias por ser tú al 100%, sin filtros, conmigo.</strong>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
