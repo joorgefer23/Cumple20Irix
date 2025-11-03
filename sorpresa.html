@@ -13,8 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* 1. SE ELIMINA EL FONDO DEGRADADO DE AQUÍ */
-            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
 
@@ -23,31 +22,21 @@
             min-height: 100vh;
             padding: 15px;
             overflow-y: auto;
-            
-            /* 2. SE AÑADE EL NUEVO FONDO DE PÁGINA AQUÍ */
-            background-image: url('https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/fondo_Canva.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Para que el fondo no se mueva con el scroll */
         }
         
         .container {
             max-width: 900px;
             margin: 0 auto;
-            
-            /* 3. SE ELIMINA EL FONDO ANTERIOR DE AQUÍ */
-            /* background-image: url('fondo.jpg'); */
-            /* background-size: cover; */
-            /* background-position: center; */
-            /* background-repeat: no-repeat; */
-            
+            background-image: url('fondo_Canva.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 20px;
             padding: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
-        /* Esta capa blanca semitransparente se mantiene, ahora se verá sobre el nuevo fondo */
         .container::before {
             content: '';
             position: absolute;
@@ -55,7 +44,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.85); /* La opacidad (0.85) se puede ajustar si quieres */
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
             z-index: 1;
         }
@@ -375,22 +364,21 @@
                         <strong>,</strong>
                         <img src="chat29.jpg" class="inline-image" alt="chat29" loading="lazy">      
                         <strong>o cuando </strong>
-                        <img src="chat20.jpg" class="inline-image" alt="chat20" loading="lazy"> 
+                        <img src="chat20.jpg" class="inline-image" alt="chat20" loading="lazy">
                         <strong>,</strong>
-                        <img src="chat26.jpg" class="inline-image" alt="chat26" loading="lazy"> 
+                        <img src="chat26.jpg" class="inline-image" alt="chat26" loading="lazy">
                         <strong>,</strong>
-                        <img src="chat27.jpg" class="inline-image" alt="chat27" loading="lazy"> 
+                        <img src="chat27.jpg" class="inline-image" alt="chat27" loading="lazy">
                         <strong>,</strong>
-                        <img src="chat28.jpg" class="inline-image" alt="chat28" loading="lazy"> 
+                        <img src="chat28.jpg" class="inline-image" alt="chat28" loading="lazy">
                         <strong>, no sabes la ilusion que me hace que cuentes conmigo para estas cosas</strong>
                         <img src="chat8.jpg" class="inline-image" alt="chat8" loading="lazy">
                         <strong>.</strong>
-                        
                     </li>
 
                     <li>
                         <strong>Gracias por simpre haber hecho que me sienta seguro hablando de mis problemas contigo</strong>
-                        <img src="chat11.jpg" class="inline-image" alt="chat11" loading="lazy"> 
+                        <img src="chat11.jpg" class="inline-image" alt="chat11" loading="lazy">
                         <strong>,</strong>
                         <img src="chat22.jpg" class="inline-image" alt="chat22" loading="lazy">
                         <strong>,</strong>
