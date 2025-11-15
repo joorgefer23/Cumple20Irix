@@ -215,22 +215,24 @@
             overflow-y: auto; 
             cursor: zoom-out; /* Cursor para cerrar */
             
-            /* --- CAMBIO 1: CENTRAR CON FLEXBOX --- */
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Se ha eliminado 'padding-top: 50px;' */
         }
 
         .lightbox-content {
             display: block;
             margin: auto;
-            max-width: 90%;
-            max-height: 90vh;
+            /* --- CAMBIO 1: TAMAÑO MÁS PEQUEÑO --- */
+            max-width: 70%; /* Antes 90% */
+            max-height: 70vh; /* Antes 90vh */
+            
             animation: zoomIn 0.3s ease; /* Animación de zoom */
             
-            /* --- CAMBIO 2: BORDES CURVOS --- */
-            border-radius: 8px;
+            /* --- CAMBIO 2: BORDES CIRCULARES --- */
+            border-radius: 50%; /* Bordes completamente circulares */
+            object-fit: contain; /* Asegura que la imagen se vea completa dentro del círculo */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Sombra para que destaque un poco más */
         }
         
         @keyframes zoomIn {
@@ -410,7 +412,7 @@
                         <strong>Gracias por hacer que sea tu consejero de confianza, cuando</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat18.jpg" class="inline-image" alt="chat18" loading="lazy">
                         <strong>,</strong>
-                        <img src="httpsG://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat29.jpg" class="inline-image" alt="chat29" loading="lazy">      
+                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat29.jpg" class="inline-image" alt="chat29" loading="lazy">      
                         <strong>o cuando </strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat20.jpg" class="inline-image" alt="chat20" loading="lazy">
                         <strong>,</strong>
@@ -440,7 +442,7 @@
                         <strong>,</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat30.jpg" class="inline-image" alt="chat30" loading="lazy">
                         <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat24.jpg" class="inline-image" alt="chat34" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat34.jpg" class="inline-image" alt="chat34" loading="lazy">
                         <strong>,</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat31.jpg" class="inline-image" alt="chat31" loading="lazy">
                         <strong>,</strong>
@@ -466,7 +468,7 @@
                         <strong>Gracias por quererme y decirme cosas bonitas</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat5.jpg" class="inline-image" alt="chat5" loading="lazy">
                         <strong>,</strong>
-                        <img src="https.../chat14.jpg" class="inline-image" alt="chat14" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat14.jpg" class="inline-image" alt="chat14" loading="lazy">
                         <strong>,</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat6.jpg" class="inline-image" alt="chat6" loading="lazy">
                         <strong>,</strong>
@@ -476,7 +478,7 @@
                         <strong>,</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat35.jpg" class="inline-image" alt="chat35" loading="lazy">
                         <strong>,</strong>
-                        <img src="httpsWELCOME.jpg" class="inline-image" alt="chat36" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat36.jpg" class="inline-image" alt="chat36" loading="lazy">
                         <strong>,</strong>
                         <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat37.jpg" class="inline-image" alt="chat37" loading="lazy">
                         <strong>,</strong>
@@ -492,7 +494,7 @@
             </div>
 
             <div class="btn-regalo-container">
-                <a href="tuRegalo.html" class="btn-regalo">Reclamar regalo</a>
+                <a href="tuRegalo.html" class="btn-regalo">🎁Reclamar regalo🎁</a>
             </div>
 
         </div>
@@ -512,8 +514,7 @@
         // 3. Recorrer todas las imágenes y añadirles el evento click
         images.forEach(function(img) {
             img.onclick = function() {
-                /* --- CAMBIO 3: USAR 'FLEX' PARA CENTRAR --- */
-                modal.style.display = 'flex'; // Muestra el modal
+                modal.style.display = 'flex'; // Muestra el modal (usando flex para centrar)
                 modalImg.src = this.src; // Pone la imagen en el modal
             }
         });
