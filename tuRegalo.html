@@ -5,15 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Tu Regalo!</title>
     <style>
-        /* Puedes añadir estilos aquí más adelante */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f0f0f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* 1. El fondo de helados (¡recuerda usar la URL de GitHub!) */
+        #page-sorpresa {
+            width: 100%;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-y: auto;
+            
+            /* !! OJO: Pega aquí la URL COMPLETA (RAW) de 'fondo_Canva.png' de tu GitHub !! */
+            background-image: url('https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/fondo_Canva.png');
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* 2. El contenedor blanco semitransparente */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 25px; /* Espacio para que la imagen no toque los bordes */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85); /* Capa blanca */
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .container > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 3. Estilos para que la imagen del regalo sea responsive */
+        .tarjeta-regalo {
+            display: block;
+            width: 100%;    /* La imagen ocupa el 100% del contenedor blanco */
+            max-width: 100%; /* Asegura que no se desborde */
+            height: auto;   /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Bordes redondeados para la propia imagen */
         }
     </style>
 </head>
 <body>
-
-    </body>
+    <div id="page-sorpresa">
+        <div class="container">
+            
+            <img src="tarjetaRegalo.png" alt="Tarjeta Regalo Head Spa" class="tarjeta-regalo">
+            
+        </div>
+    </div>
+</body>
 </html>
