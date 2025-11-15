@@ -169,6 +169,38 @@
             display: inline;
         }
 
+        /* ===== INICIO: ESTILOS PARA EL NUEVO BOTÓN ===== */
+        .btn-regalo-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .btn-regalo {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 1.5em; /* Tamaño de fuente grande */
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #e84393, #d63031); /* Colores de la página */
+            text-decoration: none;
+            border-radius: 50px; /* Bordes redondeados */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-regalo:hover {
+            transform: translateY(-5px) scale(1.05); /* Efecto al pasar el ratón */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #d63031, #e84393);
+        }
+        /* ===== FIN: ESTILOS PARA EL NUEVO BOTÓN ===== */
+
+
         /* Tablets */
         @media (min-width: 600px) {
             .container {
@@ -352,7 +384,7 @@
                         <strong>Gracias por contarme todo lo que te hace ilusión, como</strong>
                         <img src="chat21.jpg" class="inline-image" alt="chat21" loading="lazy">
                         <strong>, como cuando me ensañas que ropa te compras</strong>
-                        <img src="chat17.jpg" class="inline-image" alt="chat17" loading="lazy">
+                        <img src="chat1Z.jpg" class="inline-image" alt="chat17" loading="lazy">
                         <strong>,</strong>
                         <img src="chat16.jpg" class="inline-image" alt="chat16" loading="lazy">
                         <strong>,</strong>
@@ -449,7 +481,11 @@
                     </li>
                 </ul>
             </div>
-        </div>
+
+            <div class="btn-regalo-container">
+                <a href="tuRegalo.html" class="btn-regalo">Reclamar regalo</a>
+            </div>
+            </div>
     </div>
 </body>
 </html>
