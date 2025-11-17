@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-        }   
+        } 
 
         #page-sorpresa {
             width: 100%;
@@ -28,35 +28,34 @@
             max-width: 900px;
             margin: 0 auto;
 
-            /* --- CAMBIO AQUÍ --- */
-            /* La imagen se repetirá verticalmente si es necesario y cubrirá el ancho */
-            background-image: url('https://github.com/joorgefer23/Cumple20Irix/blob/main/fondo_Canva.png'); /* ¡Asegúrate de poner aquí la URL CORRECTA de tu imagen! */
-            background-size: 100% auto; /* Ajusta el ancho al 100% y el alto automáticamente */
-            background-position: center top; /* Centra la imagen y la alinea arriba */
-            background-repeat: repeat-y; /* ¡Esta es la clave! Hace que la imagen se repita verticalmente */
-            /* ------------------- */
-
+            /* --- 1. FONDO DE HELADOS EN EL CONTENEDOR EXTERIOR --- */
+            background-image: url('https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/fondo_Canva.png');
+            background-size: 100% auto;
+            background-position: center top;
+            background-repeat: repeat-y; /* Se repetirá verticalmente */
+            
             border-radius: 20px;
-            padding: 25px;
+            /* Se elimina el padding de aquí para que el fondo ocupe todo */
+            /* padding: 25px; */ 
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
         }
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 20px;
-            z-index: 1;
-        }
 
-        .container > * {
+        /* --- 2. SE ELIMINA LA REGLA '.container::before' --- */
+        /* Ya no la necesitamos */
+
+        /* --- 3. SE ELIMINA LA REGLA '.container > *' --- */
+        /* Ya no la necesitamos */
+
+        /* --- 4. NUEVA REGLA PARA EL CONTENEDOR INTERNO --- */
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.85); /* La capa blanca semitransparente */
+            border-radius: 20px; /* Para que coincida con el borde del contenedor */
+            padding: 25px; /* El padding que movimos aquí */
             position: relative;
             z-index: 2;
         }
+
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -73,6 +72,7 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        /* ... (El resto de tus estilos .hero h1, .hero p, .message-section, etc. siguen igual) ... */
         .hero h1 {
             font-size: 1.8em;
             color: #e84393;
@@ -120,8 +120,6 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
             flex-shrink: 0;
-            
-            /* 1. Añadido para que parezca 'clicable' */
             cursor: zoom-in; 
         }
 
@@ -217,8 +215,6 @@
             background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
             overflow-y: auto; 
             cursor: zoom-out; /* Cursor para cerrar */
-            
-            /* ESTAS 3 LÍNEAS SE QUEDAN, PERO 'display: flex;' SE ELIMINÓ DE AQUÍ */
             align-items: center;
             justify-content: center;
         }
@@ -228,9 +224,7 @@
             margin: auto;
             max-width: 70%; 
             max-height: 70vh; 
-            
             animation: zoomIn 0.3s ease; /* Animación de zoom */
-            
             border-radius: 8px; /* Bordes curvos */
             box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Sombra para que destaque un poco más */
         }
@@ -239,10 +233,14 @@
             from { transform: scale(0.5); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
-        /* Tablets */
+        
+        /* ... (Todas tus media queries van aquí abajo) ... */
         @media (min-width: 600px) {
             .container {
-                padding: 35px;
+                /* padding: 35px; */ /* Esta línea ya no es necesaria aquí */
+            }
+            .content-wrapper {
+                padding: 35px; /* El padding se ajusta aquí en pantallas más grandes */
             }
             .hero h1 {
                 font-size: 2.2em;
@@ -264,10 +262,12 @@
             }
         }
 
-        /* Desktop */
         @media (min-width: 900px) {
             .container {
-                padding: 40px;
+                /* padding: 40px; */ /* Esta línea ya no es necesaria aquí */
+            }
+            .content-wrapper {
+                padding: 40px; /* El padding se ajusta aquí en pantallas más grandes */
             }
             .hero {
                 padding: 40px 20px;
@@ -297,230 +297,226 @@
 </head>
 <body>
     <div id="page-sorpresa">
-        <div class="container">
-            <div class="hero floating">
-                <h1>🌻 Antes de darte tu regalo 🍦</h1>
-                <p>quiero decirte algo, pero esta vez de una manera más especial</p>
-            </div>
-
-            <div class="message-section">
-                <div class="text-flow">
-                    <p>
-                        <strong>Ha pasado ya más de un año de cuando</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Desde entonces</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
-                        <strong>y</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra3.jpg" class="inline-image" alt="constelacion" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Pasó un tiempo y me di cuenta que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                        <strong> y te volviste en</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra5.jpg" class="inline-image" alt="Full time" loading="lazy">
-                        <strong>. Hiciste que me diera cuenta de que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra22.jpg" class="inline-image" alt="new star (2024)" loading="lazy">
-                        <strong>y gracias a tí</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Hay personas que me criticaron porque</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra7.jpg" class="inline-image" alt="Tiroteo remix" loading="lazy">
-                        <strong>y tampoco que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
-                        <strong>.</strong>
-                        <strong>Asi que me dije a mí mismo que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra21.jpg" class="inline-image" alt="GIL" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Que sepas que siempre que suene</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
-                        <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
-                        <strong>siempre la cantaré a tope contigo.</strong>
-                    </p>
-                    <p>
-                        <strong>También quiero que sepas que nunca me cansaré de decirte que </strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra12.jpg" class="inline-image" alt="TU VAS SIN FAV" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra23.jpg" class="inline-image" alt="BUBALU" loading="lazy">
-                        <strong>...</strong>
-                        <strong> De verdad que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra18.jpg" class="inline-image" alt="CHINA pt1" loading="lazy">
-                        <strong>y que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra20.jpg" class="inline-image" alt="COMO ESTAS?" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Aunque nos separe un</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
-                        <strong>. Cuando estás conmigo</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra14.jpg" class="inline-image" alt="GAMEBOI" loading="lazy">
-                        <strong>y cuando te vas siempre pienso en que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra24.jpg" class="inline-image" alt="Te Echo De Menos" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
-                        <strong>, de verdad que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra19.jpg" class="inline-image" alt="Del estadio al cielo" loading="lazy">
-                        <strong>.</strong>
-                    </p>
-                    <p>
-                        <strong>Y como ya sabes, aunque todo esté mal</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
-                        <strong>y también que</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra25.jpg" class="inline-image" alt="Feliz Navidad" loading="lazy">
-                        <strong>.</strong>
-                    </p>
+        <div class="container"> <div class="content-wrapper"> 
+            
+                <div class="hero floating">
+                    <h1>🌻 Antes de darte tu regalo 🍦</h1>
+                    <p>quiero decirte algo, pero esta vez de una manera más especial</p>
                 </div>
-            </div>
 
-            <div class="footer">
-                <h2>También quiero decirte que:</h2>
-            </div>
+                <div class="message-section">
+                    <div class="text-flow">
+                        <p>
+                            <strong>Ha pasado ya más de un año de cuando</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra1.jpg" class="inline-image" alt="Sin Censura" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Desde entonces</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra2.jpg" class="inline-image" alt="de mi pa ti" loading="lazy">
+                            <strong>y</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra3.jpg" class="inline-image" alt="constelacion" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Pasó un tiempo y me di cuenta que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra4.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                            <strong> y te volviste en</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra5.jpg" class="inline-image" alt="Full time" loading="lazy">
+                            <strong>. Hiciste que me diera cuenta de que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra22.jpg" class="inline-image" alt="new star (2024)" loading="lazy">
+                            <strong>y gracias a tí</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra6.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Hay personas que me criticaron porque</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra7.jpg" class="inline-image" alt="Tiroteo remix" loading="lazy">
+                            <strong>y tampoco que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra8.jpg" class="inline-image" alt="LACONE" loading="lazy">
+                            <strong>.</strong>
+                            <strong>Asi que me dije a mí mismo que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra21.jpg" class="inline-image" alt="GIL" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Que sepas que siempre que suene</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra9.jpg" class="inline-image" alt="La Morocha" loading="lazy">
+                            <strong>bailaré contigo dándote una vueltita, al igual que cuando suene</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra10.jpg" class="inline-image" alt="DROGA" loading="lazy">
+                            <strong>siempre la cantaré a tope contigo.</strong>
+                        </p>
+                        <p>
+                            <strong>También quiero que sepas que nunca me cansaré de decirte que </strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra11.jpg" class="inline-image" alt="DUELE UN MONTÓN DESPEDIRME DE TI" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra12.jpg" class="inline-image" alt="TU VAS SIN FAV" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra23.jpg" class="inline-image" alt="BUBALU" loading="lazy">
+                            <strong>...</strong>
+                            <strong> De verdad que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra18.jpg" class="inline-image" alt="CHINA pt1" loading="lazy">
+                            <strong>y que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra20.jpg" class="inline-image" alt="COMO ESTAS?" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Aunque nos separe un</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra13.jpg" class="inline-image" alt="Lejos" loading="lazy">
+                            <strong>. Cuando estás conmigo</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra14.jpg" class="inline-image" alt="GAMEBOI" loading="lazy">
+                            <strong>y cuando te vas siempre pienso en que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra15.jpg" class="inline-image" alt="DtMF" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra24.jpg" class="inline-image" alt="Te Echo De Menos" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Por último, nunca podré agradecerte lo suficiente por hacer que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra16.jpg" class="inline-image" alt="Vulnerable" loading="lazy">
+                            <strong>, de verdad que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra19.jpg" class="inline-image" alt="Del estadio al cielo" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                        <p>
+                            <strong>Y como ya sabes, aunque todo esté mal</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra17.jpg" class="inline-image" alt="Colegas" loading="lazy">
+                            <strong>y también que</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/letra25.jpg" class="inline-image" alt="Feliz Navidad" loading="lazy">
+                            <strong>.</strong>
+                        </p>
+                    </div>
+                </div>
 
-            <div class="message-section">
-                <ul class="thanks-list">
-                    <li>
-                        <strong>Gracias por haber confiado en mí desde el primer momento con tu</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat15.jpg" class="inline-image" alt="chat15" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por los detalles tan bonitos que tienes conmigo</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat2.jpg" class="inline-image" alt="chat2" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat34.jpg" class="inline-image" alt="chat34" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat3.jpg" class="inline-image" alt="chat3" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat10.jpg" class="inline-image" alt="chat10" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por contarme todo lo que te hace ilusión, como</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat21.jpg" class="inline-image" alt="chat21" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat42.jpg" class="inline-image" alt="chat42" loading="lazy">
-                        <strong>, como cuando me ensañas que ropa te compras</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat17.jpg" class="inline-image" alt="chat17" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat16.jpg" class="inline-image" alt="chat16" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat4.jpg" class="inline-image" alt="chat15" loading="lazy">
-                        <strong>.</strong><strong>.</strong><strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por hacer que sea tu consejero de confianza, cuando</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat18.jpg" class="inline-image" alt="chat18" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat29.jpg" class="inline-image" alt="chat29" loading="lazy">      
-                        <strong>o cuando </strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat20.jpg" class="inline-image" alt="chat20" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat26.jpg" class="inline-image" alt="chat26" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat27.jpg" class="inline-image" alt="chat27" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat28.jpg" class="inline-image" alt="chat28" loading="lazy">
-                        <strong>, no sabes la ilusión que me hace que cuentes conmigo para estas cosas</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat8.jpg" class="inline-image" alt="chat8" loading="lazy">
-                        <strong> muchísimas gracias de verdad.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por siempre haber hecho que me sienta seguro hablando de mis problemas contigo</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat11.jpg" class="inline-image" alt="chat11" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat47.jpg" class="inline-image" alt="chat47" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat22.jpg" class="inline-image" alt="chat22" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat25.jpg" class="inline-image" alt="chat25" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por preocuparte por mí</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat23.jpg" class="inline-image" alt="chat23" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat24.jpg" class="inline-image" alt="chat24" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat30.jpg" class="inline-image" alt="chat30" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat31.jpg" class="inline-image" alt="chat31" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat32.jpg" class="inline-image" alt="chat32" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat33.jpg" class="inline-image" alt="chat33" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat35.jpg" class="inline-image" alt="chat35" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por echarme de menos</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat19.jpg" class="inline-image" alt="chat19" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat12.jpg" class="inline-image" alt="chat12" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat40.jpg" class="inline-image" alt="chat40" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat41.jpg" class="inline-image" alt="chat41" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por quererme y decirme cosas bonitas</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat46.jpg" class="inline-image" alt="chat46" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat5.jpg" class="inline-image" alt="chat5" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat14.jpg" class="inline-image" alt="chat14" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat6.jpg" class="inline-image" alt="chat6" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat7.jpg" class="inline-image" alt="chat7" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat45.jpg" class="inline-image" alt="chat45" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat1.jpg" class="inline-image" alt="chat1" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat1.jpg" class="inline-image" alt="chat1" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat44.jpg" class="inline-image" alt="chat44" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat36.jpg" class="inline-image" alt="chat36" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat37.jpg" class="inline-image" alt="chat37" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat38.jpg" class="inline-image" alt="chat38" loading="lazy">
-                        <strong>,</strong>
-                        <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat39.jpg" class="inline-image" alt="chat39" loading="lazy">
-                        <strong>.</strong>
-                    </li>
-                    <li>
-                        <strong>Gracias por contarme tu día a día, tus alegrías, tus problemas, por tus consejos, por tu paciencia... En definitiva muchisisimas gracias por ser tú al 100%, sin filtros, conmigo. De verdad que ya no me imagino una vida sin ti🫶🏼.</strong>
-                    </li>
-                </ul>
-            </div>
+                <div class="footer">
+                    <h2>También quiero decirte que:</h2>
+                </div>
 
-            <div class="btn-regalo-container">
-                <a href="tuRegalo.html" class="btn-regalo">🎁Reclama tu regalo🎁</a>
-            </div>
+                <div class="message-section">
+                    <ul class="thanks-list">
+                        <li>
+                            <strong>Gracias por haber confiado en mí desde el primer momento con tu</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat15.jpg" class="inline-image" alt="chat15" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por los detalles tan bonitos que tienes conmigo</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat2.jpg" class="inline-image" alt="chat2" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat34.jpg" class="inline-image" alt="chat34" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat3.jpg" class="inline-image" alt="chat3" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat10.jpg" class="inline-image" alt="chat10" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por contarme todo lo que te hace ilusión, como</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat21.jpg" class="inline-image" alt="chat21" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat42.jpg" class="inline-image" alt="chat42" loading="lazy">
+                            <strong>, como cuando me ensañas que ropa te compras</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat17.jpg" class="inline-image" alt="chat17" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat16.jpg" class="inline-image" alt="chat16" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat4.jpg" class="inline-image" alt="chat15" loading="lazy">
+                            <strong>.</strong><strong>.</strong><strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por hacer que sea tu consejero de confianza, cuando</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat18.jpg" class="inline-image" alt="chat18" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat29.jpg" class="inline-image" alt="chat29" loading="lazy">      
+                            <strong>o cuando </strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat20.jpg" class="inline-image" alt="chat20" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat26.jpg" class="inline-image" alt="chat26" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat27.jpg" class="inline-image" alt="chat27" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat28.jpg" class="inline-image" alt="chat28" loading="lazy">
+                            <strong>, no sabes la ilusión que me hace que cuentes conmigo para estas cosas</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat8.jpg" class="inline-image" alt="chat8" loading="lazy">
+                            <strong> muchísimas gracias de verdad.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por siempre haber hecho que me sienta seguro hablando de mis problemas contigo</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat11.jpg" class="inline-image" alt="chat11" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat47.jpg" class="inline-image" alt="chat47" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat22.jpg" class="inline-image" alt="chat22" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat25.jpg" class="inline-image" alt="chat25" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por preocuparte por mí</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat23.jpg" class="inline-image" alt="chat23" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat24.jpg" class="inline-image" alt="chat24" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https->//raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat30.jpg" class="inline-image" alt="chat30" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat31.jpg" class="inline-image" alt="chat31" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat32.jpg" class="inline-image" alt="chat32" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat33.jpg" class="inline-image" alt="chat33" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat35.jpg" class="inline-image" alt="chat35" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por echarme de menos</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat19.jpg" class="inline-image" alt="chat19" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat12.jpg" class="inline-image" alt="chat12" loading="lazy">
+                            <strong>,</strong>
+                            <img src="httpsG://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat40.jpg" class="inline-image" alt="chat40" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat41.jpg" class="inline-image" alt="chat41" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por quererme y decirme cosas bonitas</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat46.jpg" class="inline-image" alt="chat46" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat5.jpg" class="inline-image" alt="chat5" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat14.jpg" class="inline-image" alt="chat14" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat6.jpg" class="inline-image" alt="chat6" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat7.jpg" class="inline-image" alt="chat7" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat45.jpg" class="inline-image" alt="chat45" loading="lazy">
+                            <strong>,</strong>
+                            <img src="httpsimg.jpg" class="inline-image" alt="chat1" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat44.jpg" class="inline-image" alt="chat44" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat36.jpg" class="inline-image" alt="chat36" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat37.jpg" class="inline-image" alt="chat37" loading="lazy">
+                            <strong>,</strong>
+                            <img src="httpsS://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat38.jpg" class="inline-image" alt="chat38" loading="lazy">
+                            <strong>,</strong>
+                            <img src="https://raw.githubusercontent.com/joorgefer23/Cumple20Irix/main/chat39.jpg" class="inline-image" alt="chat39" loading="lazy">
+                            <strong>.</strong>
+                        </li>
+                        <li>
+                            <strong>Gracias por contarme tu día a día, tus alegrías, tus problemas, por tus consejos, por tu paciencia... En definitiva muchisisimas gracias por ser tú al 100%, sin filtros, conmigo. De verdad que ya no me imagino una vida sin ti🫶🏼.</strong>
+                        </li>
+                    </ul>
+                </div>
 
-        </div>
-    </div>
+                <div class="btn-regalo-container">
+                    <a href="tuRegalo.html" class="btn-regalo">🎁Reclama tu regalo🎁</a>
+                </div>
 
-    <div id="lightbox-modal" class="lightbox">
+            </div> </div> </div> <div id="lightbox-modal" class="lightbox">
         <img class="lightbox-content" id="lightbox-image">
     </div>
     <script>
